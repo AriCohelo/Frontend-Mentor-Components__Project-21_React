@@ -1,0 +1,135 @@
+@import './_variables';
+@import './mixins';
+@import './resets';
+
+body {
+  font-size: 32px;
+  font-family: $Ff-primary;
+  background-color: $Clr-neutral-off-white;
+  display: grid;
+  place-items: center;
+  place-content: center;
+  padding: 10rem;
+}
+
+.calcContainer {
+  background-color: $Clr-neutral-white;
+  border-radius: 24px 24px 200px 24px;
+  width: 840px;
+  padding: 3.5rem;
+  &__form {
+    display: grid;
+    grid-template-columns: repeat(4, 10rem);
+    grid-column-gap: 2rem;
+    margin-bottom: 3rem;
+    border-bottom: 2px solid $Clr-neutral-light-grey;
+    &-label {
+      font-size: 0.875rem;
+      font-weight: $Fw-bold;
+      color: $Clr-neutral-smokey-grey;
+      letter-spacing: 4px;
+      margin-bottom: 1rem;
+    }
+    &-input {
+      width: 100%;
+      border: 1px solid $Clr-neutral-light-grey;
+      border-radius: 8px;
+      padding: 1rem 1.5rem;
+      color: $Clr-neutral-off-black;
+      font-weight: $Fw-bold;
+      outline: none;
+      grid-row: 2;
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+      }
+      &:focus {
+        border: 1px solid $Clr-accent-purple;
+      }
+    }
+    &-error {
+      // display: none;
+      margin-top: 0.5rem;
+      font-size: 0.875rem;
+      color: $Clr-accent-light-red;
+      font-style: italic;
+      grid-row: 3;
+    }
+    &-submitButton {
+      background-color: $Clr-accent-purple;
+      width: 6rem;
+      height: 6rem;
+      border-radius: 50%;
+      display: grid;
+      place-content: center;
+      border: none;
+      margin-bottom: -3rem;
+      grid-row: 4;
+      grid-column-start: 4;
+      justify-self: flex-end;
+      margin-right: 0.7rem;
+      &:hover {
+        background-color: $Clr-neutral-off-black;
+        cursor: pointer;
+      }
+    }
+  }
+  &__resultYears,
+  &__resultMonths,
+  &__resultDays {
+    font-size: 6.5625rem;
+    font-style: italic;
+    font-weight: $Fw-extraBold;
+    letter-spacing: -0.48px;
+    height: 120px;
+    &-highlight {
+      color: $Clr-accent-purple;
+      letter-spacing: 2.4px;
+    }
+  }
+}
+@media (max-width: 650px) {
+  body {
+    padding: 1rem;
+  }
+  .calcContainer {
+    padding: 3rem 1.5rem;
+    width: auto;
+    border-radius: 24px 24px 100px 24px;
+    &__form {
+      grid-template-columns: repeat(3, 5.2rem);
+      grid-column-gap: 1rem;
+      &-label {
+        margin-bottom: 0;
+        font-size: 0.75rem;
+      }
+      &-input {
+        font-size: 1.25rem;
+        padding: 0.5rem 0.8rem;
+      }
+      &-submitButton {
+        grid-column-start: 2;
+        margin-right: 0;
+        margin-top: 1.5rem;
+        margin-bottom: -2rem;
+        justify-self: center;
+        width: 4rem;
+        height: 4rem;
+      }
+      &-arrowIcon {
+        width: 32px;
+        height: 32px;
+      }
+      &-error {
+        font-size: 0.5rem;
+        font-weight: $Fw-medium;
+      }
+    }
+    &__resultYears,
+    &__resultMonths,
+    &__resultDays {
+      font-size: 3.3rem;
+      height: 65px;
+    }
+  }
+}
