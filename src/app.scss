@@ -100,7 +100,7 @@ body {
       grid-template-columns: repeat(3, 5.2rem);
       grid-column-gap: 1rem;
       &-label {
-        margin-bottom: 0;
+        margin-bottom: 0.2rem;
         font-size: 0.75rem;
       }
       &-input {
@@ -117,8 +117,8 @@ body {
         height: 4rem;
       }
       &-arrowIcon {
-        width: 32px;
-        height: 32px;
+        width: 24px;
+        height: 24px;
       }
       &-error {
         font-size: 0.5rem;
